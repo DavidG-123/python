@@ -2,6 +2,7 @@
 
 import cv2
 import os
+import sys
 from time import sleep
 import time
 from datetime import datetime
@@ -9,9 +10,10 @@ import pyautogui
 import numpy as np
 from PIL import ImageGrab
 from PIL import Image
-red = "\033[1;31;40m"; white = "\033[1;37;40m"; green = "\033[1;32;40m"; blue = "\033[1;36;40m"; yellow = "\033[1;33;40m"
 
 def main():
+    global red; global white; global green; global blue; global yellow
+    red = "\033[1;31;40m"; white = "\033[1;37;40m"; green = "\033[1;32;40m"; blue = "\033[1;36;40m"; yellow = "\033[1;33;40m"
     print(red, end='')
     for i in range(83):
        print("Welcome to the Photobooth program. When you are ready to take the picture, press Q."[i], sep='', end='', flush=True); sleep(.03)
@@ -102,10 +104,11 @@ def loadIt(x, y):
     theTime = str(now.strftime("%Y-%B-%d %H-%M-%S"))
     filename = str("gallery/" + f"{theTime}" + ".png")
     image_og.save(filename)
+    print(red, end='')
+    for a in range(42):
+        print("Thank you for using my Photobooth program!"[a], end='', sep='', flush=True); sleep(.03)
+    print(white)
+
 
 if __name__ == "__main__":
     main()
-print(red, end='')
-for a in range(42):
-    print("Thank you for using my Photobooth program!"[a], end='', sep='', flush=True); sleep(.03)
-print(white)

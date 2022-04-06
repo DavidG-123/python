@@ -5,8 +5,8 @@ import os
 import cv2
 import numpy as n
 from pytest import approx
-from face_scanner import main
-from face_scanner import loadIt
+from face_photobooth import main
+from face_photobooth import loadIt
 
 
 def test_main():
